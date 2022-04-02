@@ -226,6 +226,13 @@ The landing page is optional. Use the CreateRegistrationWebPage parameter.
 
 ![](misc/Serverless-MP.png)
 
+## Deployment 
+
+Use the following command to deploy the environment:
+
+```bash
+sam deploy --template-file packaged.yaml --stack-name aws-marketplace --capabilities CAPABILITY_IAM --region us-east-1 --parameter-overrides ParameterKey=WebsiteS3BucketName,ParameterValue=aws-marketplace-hypertrack ParameterKey=ProductCode,ParameterValue=1d613uj4urf5cb2pq37zhi00r ParameterKey=EntitlementSNSTopic,ParameterValue=arn:aws:sns:us-east-1:287250355862:aws-mp-subscription-notification-1d613uj4urf5cb2pq37zhi00r ParameterKey=SubscriptionSNSTopic,ParameterValue=arn:aws:sns:us-east-1:287250355862:aws-mp-subscription-notification-1d613uj4urf5cb2pq37zhi00r ParameterKey=MarketplaceTechAdminEmail,ParameterValue=devops@hypertrack.com
+```
 
 ## Cleanup
 
